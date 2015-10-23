@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Automatic">
+    <entity name="IHPRequest" representedClassName="IHPRequest" syncable="YES">
+        <attribute name="requestCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="requestDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="requestDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="requestDuration" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="requestImageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="requestLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="requestReward" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="requestRewardDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="requestStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="requestTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="requestViewCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="requestHelper" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IHPUser" inverseName="requestsHelped" inverseEntity="IHPUser" syncable="YES"/>
+        <relationship name="requestUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IHPUser" inverseName="requests" inverseEntity="IHPUser" syncable="YES"/>
+    </entity>
+    <entity name="IHPUser" representedClassName="IHPUser" syncable="YES">
+        <attribute name="areaOfInterest" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateJoined" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intro" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profilePicURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="requests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IHPRequest" inverseName="requestUser" inverseEntity="IHPRequest" syncable="YES"/>
+        <relationship name="requestsHelped" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IHPRequest" inverseName="requestHelper" inverseEntity="IHPRequest" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="IHPRequest" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="IHPUser" positionX="-54" positionY="-9" width="128" height="240"/>
+    </elements>
+</model>
