@@ -78,7 +78,7 @@
 }
 
 
--(void)fetchDataWithUserName:(NSString *)username{
+-(void)fetchDataWithUsername:(NSString *)username{
     //Retrieving data from storage
     NSFetchRequest *retrieveAllRequests = [NSFetchRequest fetchRequestWithEntityName:@"IHPRequest"];
     NSFetchRequest *retrieveAllUsers = [NSFetchRequest fetchRequestWithEntityName:@"IHPUser"];

@@ -19,6 +19,6 @@
 
 + (instancetype) sharedDataStore;
 - (void) saveContext;
-- (void) fetchData;
+- (void) fetchDataWithUsername:(NSString *)username;
 
 @end
