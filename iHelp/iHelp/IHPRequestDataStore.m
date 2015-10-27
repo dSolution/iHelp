@@ -88,8 +88,8 @@
     NSArray *users = [self.managedObjectContext executeFetchRequest:retrieveAllUsers error:nil];
     self.user = users[0];
     
-    NSPredicate *categoryPredicate = [NSPredicate predicateWithFormat:@"requestCategory MATCHES[c] %@", self.user.areaOfInterest];
-    retrieveAllRequests.predicate = categoryPredicate;
+    //NSPredicate *categoryPredicate = [NSPredicate predicateWithFormat:@"requestCategory MATCHES[c] %@", self.user.areaOfInterest];
+    //retrieveAllRequests.predicate = categoryPredicate;
     self.requests = [self.managedObjectContext executeFetchRequest:retrieveAllRequests error:nil];
 }
 

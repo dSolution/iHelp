@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//    IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
+    //IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
 //    NSManagedObjectContext *manageContext = dataStore.managedObjectContext;
     
 //    IHPUser *ben = [NSEntityDescription insertNewObjectForEntityForName:@"IHPUser" inManagedObjectContext:manageContext];
@@ -69,6 +69,8 @@
 //        NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
 //        [dateFormat setLocale:usLocale];
 //        NSLog(@"Request Date: %@",[dateFormat stringFromDate:date]);
+//        
+//        NSLog(@"Image Url: %@", ben.profilePicURL);
 //        
 //    }
     

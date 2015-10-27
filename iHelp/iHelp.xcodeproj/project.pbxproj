@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		768A8E021BDFE60200805359 /* IHPFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 768A8E011BDFE60200805359 /* IHPFeedTableViewController.m */; };
+		768A8E081BDFEB1200805359 /* IHPRequestFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 768A8E071BDFEB1200805359 /* IHPRequestFeedTableViewCell.m */; };
+		768A8E0B1BDFEF8000805359 /* IHPRequestFeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 768A8E0A1BDFEF8000805359 /* IHPRequestFeedDetailViewController.m */; };
 		76DD6B801BDA778900245D0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DD6B7F1BDA778900245D0B /* main.m */; };
 		76DD6B831BDA778900245D0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DD6B821BDA778900245D0B /* AppDelegate.m */; };
 		76DD6B891BDA778900245D0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76DD6B871BDA778900245D0B /* Main.storyboard */; };
@@ -41,6 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		768A8E001BDFE60200805359 /* IHPFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPFeedTableViewController.h; sourceTree = "<group>"; };
+		768A8E011BDFE60200805359 /* IHPFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPFeedTableViewController.m; sourceTree = "<group>"; };
+		768A8E061BDFEB1200805359 /* IHPRequestFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPRequestFeedTableViewCell.h; sourceTree = "<group>"; };
+		768A8E071BDFEB1200805359 /* IHPRequestFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPRequestFeedTableViewCell.m; sourceTree = "<group>"; };
+		768A8E091BDFEF8000805359 /* IHPRequestFeedDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPRequestFeedDetailViewController.h; sourceTree = "<group>"; };
+		768A8E0A1BDFEF8000805359 /* IHPRequestFeedDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPRequestFeedDetailViewController.m; sourceTree = "<group>"; };
 		76DD6B7B1BDA778900245D0B /* iHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76DD6B7F1BDA778900245D0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		76DD6B811BDA778900245D0B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -158,6 +167,12 @@
 		76DD6BB41BDA77CA00245D0B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				768A8E061BDFEB1200805359 /* IHPRequestFeedTableViewCell.h */,
+				768A8E071BDFEB1200805359 /* IHPRequestFeedTableViewCell.m */,
+				768A8E001BDFE60200805359 /* IHPFeedTableViewController.h */,
+				768A8E011BDFE60200805359 /* IHPFeedTableViewController.m */,
+				768A8E091BDFEF8000805359 /* IHPRequestFeedDetailViewController.h */,
+				768A8E0A1BDFEF8000805359 /* IHPRequestFeedDetailViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -266,6 +281,7 @@
 				TargetAttributes = {
 					76DD6B7A1BDA778900245D0B = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 3P65N5866H;
 					};
 					76DD6B961BDA778900245D0B = {
 						CreatedOnToolsVersion = 7.1;
@@ -329,9 +345,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				768A8E0B1BDFEF8000805359 /* IHPRequestFeedDetailViewController.m in Sources */,
 				76DD6BC11BDA7ABD00245D0B /* IHPRequest.m in Sources */,
 				76DD6BC61BDA7BA500245D0B /* IHPRequestDataStore.m in Sources */,
 				76DD6B8C1BDA778900245D0B /* iHelp.xcdatamodeld in Sources */,
+				768A8E081BDFEB1200805359 /* IHPRequestFeedTableViewCell.m in Sources */,
+				768A8E021BDFE60200805359 /* IHPFeedTableViewController.m in Sources */,
 				76DD6BC31BDA7ABD00245D0B /* IHPUser.m in Sources */,
 				76DD6B831BDA778900245D0B /* AppDelegate.m in Sources */,
 				76DD6B801BDA778900245D0B /* main.m in Sources */,
@@ -477,10 +496,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iHelp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IHP.iHelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -488,10 +510,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iHelp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IHP.iHelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -562,6 +587,7 @@
 				76DD6BAD1BDA778900245D0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		76DD6BAE1BDA778900245D0B /* Build configuration list for PBXNativeTarget "iHelpTests" */ = {
 			isa = XCConfigurationList;
@@ -570,6 +596,7 @@
 				76DD6BB01BDA778900245D0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		76DD6BB11BDA778900245D0B /* Build configuration list for PBXNativeTarget "iHelpUITests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +605,7 @@
 				76DD6BB31BDA778900245D0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
