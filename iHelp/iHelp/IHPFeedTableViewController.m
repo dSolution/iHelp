@@ -58,8 +58,6 @@
     
     self.dataStore = [IHPRequestDataStore sharedDataStore];
     
-    [self.dataStore fetchDataWithUsername:@"bennyBoy123"];
-    
     self.usernameTextLabel.text = self.dataStore.user.username;
     UIImage *userProfileImage = [UIImage imageNamed:self.dataStore.user.profilePicURL];
     self.userProfileImageView.image = userProfileImage;

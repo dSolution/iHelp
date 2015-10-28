@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76215B9E1BE14711008E8E16 /* IHPRequestListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76215B9D1BE14711008E8E16 /* IHPRequestListTableViewController.m */; };
 		768A8E021BDFE60200805359 /* IHPFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 768A8E011BDFE60200805359 /* IHPFeedTableViewController.m */; };
 		768A8E081BDFEB1200805359 /* IHPRequestFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 768A8E071BDFEB1200805359 /* IHPRequestFeedTableViewCell.m */; };
 		768A8E0B1BDFEF8000805359 /* IHPRequestFeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 768A8E0A1BDFEF8000805359 /* IHPRequestFeedDetailViewController.m */; };
+		768A8E111BDFF71E00805359 /* IHPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 768A8E101BDFF71E00805359 /* IHPTabBarController.m */; };
+		76D822A51BE13F3700B8F2A1 /* IHPProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D822A41BE13F3700B8F2A1 /* IHPProfileTableViewController.m */; };
 		76DD6B801BDA778900245D0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DD6B7F1BDA778900245D0B /* main.m */; };
 		76DD6B831BDA778900245D0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DD6B821BDA778900245D0B /* AppDelegate.m */; };
 		76DD6B891BDA778900245D0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76DD6B871BDA778900245D0B /* Main.storyboard */; };
@@ -44,12 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		76215B9C1BE14711008E8E16 /* IHPRequestListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPRequestListTableViewController.h; sourceTree = "<group>"; };
+		76215B9D1BE14711008E8E16 /* IHPRequestListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPRequestListTableViewController.m; sourceTree = "<group>"; };
 		768A8E001BDFE60200805359 /* IHPFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPFeedTableViewController.h; sourceTree = "<group>"; };
 		768A8E011BDFE60200805359 /* IHPFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPFeedTableViewController.m; sourceTree = "<group>"; };
 		768A8E061BDFEB1200805359 /* IHPRequestFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPRequestFeedTableViewCell.h; sourceTree = "<group>"; };
 		768A8E071BDFEB1200805359 /* IHPRequestFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPRequestFeedTableViewCell.m; sourceTree = "<group>"; };
 		768A8E091BDFEF8000805359 /* IHPRequestFeedDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPRequestFeedDetailViewController.h; sourceTree = "<group>"; };
 		768A8E0A1BDFEF8000805359 /* IHPRequestFeedDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPRequestFeedDetailViewController.m; sourceTree = "<group>"; };
+		768A8E0F1BDFF71E00805359 /* IHPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPTabBarController.h; sourceTree = "<group>"; };
+		768A8E101BDFF71E00805359 /* IHPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPTabBarController.m; sourceTree = "<group>"; };
+		76D822A31BE13F3600B8F2A1 /* IHPProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPProfileTableViewController.h; sourceTree = "<group>"; };
+		76D822A41BE13F3700B8F2A1 /* IHPProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPProfileTableViewController.m; sourceTree = "<group>"; };
 		76DD6B7B1BDA778900245D0B /* iHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76DD6B7F1BDA778900245D0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		76DD6B811BDA778900245D0B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,6 +182,12 @@
 				768A8E011BDFE60200805359 /* IHPFeedTableViewController.m */,
 				768A8E091BDFEF8000805359 /* IHPRequestFeedDetailViewController.h */,
 				768A8E0A1BDFEF8000805359 /* IHPRequestFeedDetailViewController.m */,
+				76D822A31BE13F3600B8F2A1 /* IHPProfileTableViewController.h */,
+				76D822A41BE13F3700B8F2A1 /* IHPProfileTableViewController.m */,
+				768A8E0F1BDFF71E00805359 /* IHPTabBarController.h */,
+				768A8E101BDFF71E00805359 /* IHPTabBarController.m */,
+				76215B9C1BE14711008E8E16 /* IHPRequestListTableViewController.h */,
+				76215B9D1BE14711008E8E16 /* IHPRequestListTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -346,7 +361,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				768A8E0B1BDFEF8000805359 /* IHPRequestFeedDetailViewController.m in Sources */,
+				768A8E111BDFF71E00805359 /* IHPTabBarController.m in Sources */,
 				76DD6BC11BDA7ABD00245D0B /* IHPRequest.m in Sources */,
+				76D822A51BE13F3700B8F2A1 /* IHPProfileTableViewController.m in Sources */,
 				76DD6BC61BDA7BA500245D0B /* IHPRequestDataStore.m in Sources */,
 				76DD6B8C1BDA778900245D0B /* iHelp.xcdatamodeld in Sources */,
 				768A8E081BDFEB1200805359 /* IHPRequestFeedTableViewCell.m in Sources */,
@@ -356,6 +373,7 @@
 				76DD6B801BDA778900245D0B /* main.m in Sources */,
 				76DD6BC21BDA7ABD00245D0B /* IHPUser+CoreDataProperties.m in Sources */,
 				76DD6BC01BDA7ABD00245D0B /* IHPRequest+CoreDataProperties.m in Sources */,
+				76215B9E1BE14711008E8E16 /* IHPRequestListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
