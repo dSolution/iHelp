@@ -74,8 +74,8 @@
 //        
 //    }
     
-    IHPRequestDataStore *data = [IHPRequestDataStore sharedDataStore];
-    [data fetchDataWithUsername:@"leof99"];
+//    IHPRequestDataStore *data = [IHPRequestDataStore sharedDataStore];
+//    [data fetchDataWithUsername:@"leof99"];
     
     return YES;
 }

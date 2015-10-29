@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X9y-Px-egD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pge-2p-Juj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -428,6 +428,54 @@
             </objects>
             <point key="canvasLocation" x="2616.5" y="279.5"/>
         </scene>
+        <!--User Login View Controller-->
+        <scene sceneID="xxZ-sN-WOF">
+            <objects>
+                <viewController id="pge-2p-Juj" customClass="IHPUserLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wVM-sw-npW"/>
+                        <viewControllerLayoutGuide type="bottom" id="8KU-Xe-BvA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K2T-QQ-eyS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PXW-b1-5uY">
+                                <rect key="frame" x="55" y="181" width="265" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lda-Z9-f6k">
+                                <rect key="frame" x="55" y="228" width="265" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYI-XJ-Fuj">
+                                <rect key="frame" x="124" y="319" width="99" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.79636471468453973" blue="0.18183856024167411" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Log In to iHelp"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="pge-2p-Juj" eventType="touchUpInside" id="h5N-Tq-wRP"/>
+                                    <segue destination="X9y-Px-egD" kind="presentation" modalTransitionStyle="coverVertical" id="3J0-GB-icy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="passwordField" destination="Lda-Z9-f6k" id="gJ9-f8-CF6"/>
+                        <outlet property="usernameField" destination="PXW-b1-5uY" id="17N-tp-Q6R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8k-9g-JCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-280.5" y="248.5"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="t4E-DF-j6w">
             <objects>
@@ -565,7 +613,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCb-gD-X4F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="192.5" y="1065.5"/>
+            <point key="canvasLocation" x="254.5" y="1099.5"/>
         </scene>
         <!--Feed-->
         <scene sceneID="x9U-uN-8Cb">
