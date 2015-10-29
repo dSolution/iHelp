@@ -8,6 +8,7 @@
 
 #import "IHPUserLoginViewController.h"
 #import "IHPRequestDataStore.h"
+#import <Firebase/Firebase.h>
 
 @interface IHPUserLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -19,6 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Create a reference to a Firebase database URL
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://luminous-torch-5235.firebaseIO.com"];
+    // Write data to Firebase
+    [myRootRef setValue:@"Leo test."];
 }
 
 - (IBAction)loginButtonTapped:(id)sender {

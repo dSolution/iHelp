@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35D9425368784BBBB7C4CCC0 /* libPods-iHelp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C394C0A3FAE50EF9D1A15C22 /* libPods-iHelp.a */; };
 		4C6966EA1BE290BC004A26D8 /* IHPUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6966E91BE290BC004A26D8 /* IHPUserLoginViewController.m */; };
 		76215B9E1BE14711008E8E16 /* IHPRequestListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76215B9D1BE14711008E8E16 /* IHPRequestListTableViewController.m */; };
 		764D88461BE261D800FF900D /* IHPCreateRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764D88451BE261D800FF900D /* IHPCreateRequestViewController.m */; };
@@ -91,6 +92,9 @@
 		76DD6BC41BDA7BA500245D0B /* IHPRequestDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPRequestDataStore.h; sourceTree = "<group>"; };
 		76DD6BC51BDA7BA500245D0B /* IHPRequestDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPRequestDataStore.m; sourceTree = "<group>"; };
 		76DD6BC71BDA7EDD00245D0B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AB0F59D4A39D11FD9CCD8CDD /* Pods-iHelp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHelp.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHelp/Pods-iHelp.release.xcconfig"; sourceTree = "<group>"; };
+		C394C0A3FAE50EF9D1A15C22 /* libPods-iHelp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iHelp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE1C3E57A870163BBA2D58A0 /* Pods-iHelp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHelp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHelp/Pods-iHelp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76DD6BC81BDA7EDD00245D0B /* CoreData.framework in Frameworks */,
+				35D9425368784BBBB7C4CCC0 /* libPods-iHelp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +124,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12F8C89E9C46B5CBC3ED7BF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE1C3E57A870163BBA2D58A0 /* Pods-iHelp.debug.xcconfig */,
+				AB0F59D4A39D11FD9CCD8CDD /* Pods-iHelp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		66C9685648EF028677E90413 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C394C0A3FAE50EF9D1A15C22 /* libPods-iHelp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		76DD6B721BDA778900245D0B = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +149,8 @@
 				76DD6B9A1BDA778900245D0B /* iHelpTests */,
 				76DD6BA51BDA778900245D0B /* iHelpUITests */,
 				76DD6B7C1BDA778900245D0B /* Products */,
+				12F8C89E9C46B5CBC3ED7BF7 /* Pods */,
+				66C9685648EF028677E90413 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -246,9 +270,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76DD6BAB1BDA778900245D0B /* Build configuration list for PBXNativeTarget "iHelp" */;
 			buildPhases = (
+				C9862786CE5557207EE9ACF2 /* Check Pods Manifest.lock */,
 				76DD6B771BDA778900245D0B /* Sources */,
 				76DD6B781BDA778900245D0B /* Frameworks */,
 				76DD6B791BDA778900245D0B /* Resources */,
+				177EE0C4141EEBDA29411800 /* Embed Pods Frameworks */,
+				2FB1560B2A882B879F653234 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -364,6 +391,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		177EE0C4141EEBDA29411800 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iHelp/Pods-iHelp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FB1560B2A882B879F653234 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iHelp/Pods-iHelp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9862786CE5557207EE9ACF2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		76DD6B771BDA778900245D0B /* Sources */ = {
@@ -524,6 +599,7 @@
 		};
 		76DD6BAC1BDA778900245D0B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE1C3E57A870163BBA2D58A0 /* Pods-iHelp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -538,6 +614,7 @@
 		};
 		76DD6BAD1BDA778900245D0B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB0F59D4A39D11FD9CCD8CDD /* Pods-iHelp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
