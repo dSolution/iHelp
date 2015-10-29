@@ -7,6 +7,8 @@
 //
 
 #import "IHPCreateRequestViewController.h"
+#import "IHPRequestDataStore.h"
+#import "IHPRequest.h"
 
 @interface IHPCreateRequestViewController ()
 
@@ -18,6 +20,11 @@
 @property (nonatomic, strong) NSArray *pickerData;
 @property (weak, nonatomic) IBOutlet UISwitch *rewardSwitch;
 
+@property (weak, nonatomic) IBOutlet UITextField *requestTitleLabel;
+@property (weak, nonatomic) IBOutlet UITextField *requestDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UITextField *requestRewardDescriptionLabel;
+
+
 @end
 
 @implementation IHPCreateRequestViewController
@@ -26,15 +33,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.picker = [UIPickerView new];
-    self.picker.delegate = self;
-    self.picker.dataSource = self;
+    
     
 }
+
+// category selection
 - (IBAction)setPickerViewAsFirstResponder:(id)sender {
     
     NSLog(@"Picker begin!");
-    
+    self.picker = [UIPickerView new];
+    self.picker.delegate = self;
+    self.picker.dataSource = self;
     self.pickerData = @[@"Animals and Pets",
                         @"Antique",
                         @"Arts",
@@ -58,22 +67,48 @@
     [self.picker becomeFirstResponder];
     
 }
+
+// duration selection
 - (IBAction)selectRequestDuration:(id)sender {
-    self.pickerData = @[@"1 Day",
-                        @"5 Days",
-                        @"10 Days",
-                        @"15 Days",
-                        @"1 Month",
-                        @"6 Months",
-                        @"1 Year",
-                        @"No end date"];
+    self.picker = [UIPickerView new];
+    self.picker.delegate = self;
+    self.picker.dataSource = self;
+    self.pickerData = @[@"1",
+                        @"5",
+                        @"10",
+                        @"15",
+                        @"30",
+                        @"180",
+                        @"365"];
     
     self.durationTextField.inputView = self.picker;
     self.selectedTextField = self.durationTextField;
     
     [self.picker becomeFirstResponder];
 }
+
 - (IBAction)saveRequestApplication:(id)sender {
+    IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
+    NSManagedObjectContext *manageContext = dataStore.managedObjectContext;
+    
+    IHPRequest *request = [NSEntityDescription insertNewObjectForEntityForName:@"IHPRequest" inManagedObjectContext:manageContext];
+    request.requestUser = dataStore.user;
+    
+    NSDate *today = [NSDate date];
+    request.requestTitle = self.requestTitleLabel.text;
+    request.requestDescription = self.requestDescriptionLabel.text;
+    request.requestImageURL = @"zondaF";
+    request.requestCategory = self.categoryTextField.text;
+    request.requestViewCount = 0;
+    request.requestReward = self.rewardSwitch.on;
+    request.requestRewardDescription = self.requestRewardDescriptionLabel.text;
+    request.requestDate = [today timeIntervalSinceReferenceDate];
+    request.requestDuration = self.durationTextField.text.integerValue;
+    request.requestStatus = @"Open";
+    
+    [dataStore saveContext];
+    [dataStore refreshAllRequests];
+    
     self.tabBarController.selectedIndex = 0;
 }
 

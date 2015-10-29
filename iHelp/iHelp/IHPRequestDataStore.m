@@ -93,4 +93,9 @@
     self.requests = [self.managedObjectContext executeFetchRequest:retrieveAllRequests error:nil];
 }
 
+-(void)refreshAllRequests{
+    NSFetchRequest *retrieveAllRequests = [NSFetchRequest fetchRequestWithEntityName:@"IHPRequest"];
+    self.requests = [self.managedObjectContext executeFetchRequest:retrieveAllRequests error:nil];
+}
+
 @end

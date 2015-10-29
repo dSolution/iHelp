@@ -20,9 +20,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    //IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
+//    IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
 //    NSManagedObjectContext *manageContext = dataStore.managedObjectContext;
-    
+//    
 //    IHPUser *ben = [NSEntityDescription insertNewObjectForEntityForName:@"IHPUser" inManagedObjectContext:manageContext];
 //    
 //    ben.username = @"leof99";
@@ -51,9 +51,9 @@
 //    request.requestStatus = @"Open";
 //    
 //    [dataStore saveContext];
-    
-//    [dataStore fetchDataWithUsername:@"leof99"];
 //    
+//    [dataStore fetchDataWithUsername:@"leof99"];
+//
 //    IHPUser *ben = dataStore.user;
 //    NSArray *allRequest = dataStore.requests;
 //    
@@ -75,7 +75,7 @@
 //    }
     
     IHPRequestDataStore *data = [IHPRequestDataStore sharedDataStore];
-    [data fetchDataWithUsername:@"bennyBoy123"];
+    [data fetchDataWithUsername:@"leof99"];
     
     return YES;
 }

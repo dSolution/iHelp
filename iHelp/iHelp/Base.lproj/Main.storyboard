@@ -557,6 +557,9 @@
                     <connections>
                         <outlet property="categoryTextField" destination="2aF-G2-SY2" id="8Jg-WU-Piq"/>
                         <outlet property="durationTextField" destination="5lp-5j-UKK" id="oQe-fr-6eV"/>
+                        <outlet property="requestDescriptionLabel" destination="kUF-BS-Qjx" id="Zto-qM-QaN"/>
+                        <outlet property="requestRewardDescriptionLabel" destination="0iE-dV-Rk7" id="9GP-yh-chP"/>
+                        <outlet property="requestTitleLabel" destination="JQc-gc-KrK" id="4F2-ms-6tv"/>
                         <outlet property="rewardSwitch" destination="Lah-9O-Gcx" id="PIv-8A-Pwq"/>
                     </connections>
                 </viewController>
