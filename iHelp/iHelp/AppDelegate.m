@@ -76,6 +76,7 @@
     
     IHPRequestDataStore *data = [IHPRequestDataStore sharedDataStore];
     [data fetchDataWithUsername:@"bennyBoy123"];
+    
     return YES;
 }
 

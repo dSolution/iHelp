@@ -17,7 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"viewDidLoad in tabBarController.");
+    self.selectedIndex = 0;
 
+    NSArray *icons = @[@"feed", @"profile",@"request"];
+    for (NSUInteger i=0; i<self.tabBar.items.count; i++) {
+        UITabBarItem *item = self.tabBar.items[i];
+        UIImage *icon = [UIImage imageNamed:icons[i]];
+        item.image = icon;
+        item.tag = 3;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,9 +38,10 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    NSLog(@"Current selected tab before: %lu", self.tabBarController.selectedIndex);
-    self.tabBarController.selectedIndex = 2;
-     NSLog(@"Current selected tab after: %lu", self.tabBarController.selectedIndex);
+//    NSLog(@"Current selected tab before: %lu", self.tabBarController.selectedIndex);
+//    self.tabBarController.selectedIndex = 1;
+//    self.tabBar setSelectedItem:
+//     NSLog(@"Current selected tab after: %lu", self.tabBarController.selectedIndex);
 }
 //-(void)viewWillAppear:(BOOL)animated{
 //    [super viewWillAppear:animated];

@@ -32,7 +32,9 @@
     self.detailRewardLabel.text = self.request.requestRewardDescription;
     //    self..text = [NSString stringWithFormat:@"%lu", (NSUInteger)eachRequest.requestViewCount];
     
-
+    
+    
+    self.tabBarController.tabBar.hidden = YES;
 }
 
 - (NSString *)timeFormattedText:(NSTimeInterval)timeInterval{

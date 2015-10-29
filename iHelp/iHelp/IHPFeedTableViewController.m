@@ -54,8 +54,6 @@
 //        
 //        [dataStore saveContext];
 
-    
-    
     self.dataStore = [IHPRequestDataStore sharedDataStore];
     
     self.usernameTextLabel.text = self.dataStore.user.username;
@@ -63,7 +61,12 @@
     self.userProfileImageView.image = userProfileImage;
     
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 #pragma mark - Table view data source
