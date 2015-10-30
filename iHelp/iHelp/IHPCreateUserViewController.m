@@ -52,7 +52,7 @@
             user.email = self.usernameField.text;
             user.firstname = @"";
             user.lastname = @"";
-            user.profilePicURL = @"";
+            user.profilePicURL = @"defaultProfilePicture";
             user.gender = @"";
             user.areaOfInterest = @"";
             user.intro = @"";
