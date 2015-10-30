@@ -459,7 +459,6 @@
                                 <state key="normal" title="Log In to iHelp"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="pge-2p-Juj" eventType="touchUpInside" id="h5N-Tq-wRP"/>
-                                    <segue destination="X9y-Px-egD" kind="presentation" modalTransitionStyle="coverVertical" id="3J0-GB-icy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -470,6 +469,7 @@
                     <connections>
                         <outlet property="passwordField" destination="Lda-Z9-f6k" id="gJ9-f8-CF6"/>
                         <outlet property="usernameField" destination="PXW-b1-5uY" id="17N-tp-Q6R"/>
+                        <segue destination="X9y-Px-egD" kind="presentation" identifier="loginSegue" id="hTJ-sa-htv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8k-9g-JCe" userLabel="First Responder" sceneMemberID="firstResponder"/>

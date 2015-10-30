@@ -61,25 +61,20 @@
 }
 
 - (IBAction)loginButtonTapped:(id)sender {
-    //log in with User credential
     [self.rootRef authUser:self.usernameField.text password:self.passwordField.text withCompletionBlock:^(NSError *error, FAuthData *authData) {
         if (error) {
-            // There was an error logging in to this account
             self.isValidLogin = NO;
             [self createAlert];
-
-            
+            NSLog(@"log in failed");
         } else {
             self.isValidLogin = YES;
             [self fetchLoggedinUserData];
-            NSLog(@"logged in successfully");
+            [self performSegueWithIdentifier:@"loginSegue" sender:self];
+            NSLog(@"log in successfully");
         }
     }];
 }
 
--(BOOL)isValidUsernamePassword{
-    return YES;
-}
 
 - (void)createAlert{
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Invalid login username or password"
@@ -98,10 +93,5 @@
     IHPRequestDataStore *data = [IHPRequestDataStore sharedDataStore];
     [data fetchDataWithUsername:@"leof99"];
 }
-
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
-    return self.isValidLogin;
-}
-
 
 @end
