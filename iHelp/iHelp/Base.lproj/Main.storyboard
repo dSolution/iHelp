@@ -260,7 +260,7 @@
                                 <rect key="frame" x="0.0" y="199" width="375" height="117"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZUE-58-zxR" id="3Ut-Qr-uQ5">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="116.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="117"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3lK-z3-Tby" userLabel="Request Image">
@@ -446,12 +446,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lda-Z9-f6k">
-                                <rect key="frame" x="55" y="228" width="265" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYI-XJ-Fuj">
                                 <rect key="frame" x="124" y="319" width="99" height="30"/>
                                 <animations/>
@@ -461,6 +455,21 @@
                                     <action selector="loginButtonTapped:" destination="pge-2p-Juj" eventType="touchUpInside" id="h5N-Tq-wRP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3z-e1-64U">
+                                <rect key="frame" x="145" y="369" width="57" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.79636471470000003" blue="0.1818385602" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <segue destination="zB2-g1-r64" kind="presentation" id="6CH-Pm-ntK"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lda-Z9-f6k">
+                                <rect key="frame" x="55" y="228" width="265" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -475,6 +484,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8k-9g-JCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-280.5" y="248.5"/>
+        </scene>
+        <!--Create User View Controller-->
+        <scene sceneID="CsN-Df-qoA">
+            <objects>
+                <viewController id="zB2-g1-r64" customClass="IHPCreateUserViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lsC-wt-Hbn"/>
+                        <viewControllerLayoutGuide type="bottom" id="DKN-ZR-65B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ukh-bn-dVh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wUr-2m-n6x">
+                                <rect key="frame" x="50" y="200" width="265" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qt9-a8-DBE">
+                                <rect key="frame" x="50" y="253" width="265" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEv-aL-2T5">
+                                <rect key="frame" x="92" y="374" width="75" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.79636471470000003" blue="0.1818385602" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Nevermind"/>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="zB2-g1-r64" eventType="touchUpInside" id="OuY-EI-eXY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAC-G6-d3j">
+                                <rect key="frame" x="191" y="374" width="57" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.79636471470000003" blue="0.1818385602" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="registerTapped:" destination="zB2-g1-r64" eventType="touchUpInside" id="D8v-ch-kcR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="passwordField" destination="Qt9-a8-DBE" id="pk0-FO-DBB"/>
+                        <outlet property="usernameField" destination="wUr-2m-n6x" id="WTS-aM-Fxq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mY-QR-XiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-280.5" y="1099.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="t4E-DF-j6w">
@@ -545,7 +610,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLu-d8-66N">
-                                <rect key="frame" x="20" y="314.5" width="57.5" height="20.5"/>
+                                <rect key="frame" x="20" y="315" width="58" height="20"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

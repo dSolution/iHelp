@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35D9425368784BBBB7C4CCC0 /* libPods-iHelp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C394C0A3FAE50EF9D1A15C22 /* libPods-iHelp.a */; };
+		4C20BEB41BE3A85C005212A0 /* IHPCreateUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C20BEB31BE3A85C005212A0 /* IHPCreateUserViewController.m */; };
 		4C6966EA1BE290BC004A26D8 /* IHPUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6966E91BE290BC004A26D8 /* IHPUserLoginViewController.m */; };
 		76215B9E1BE14711008E8E16 /* IHPRequestListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76215B9D1BE14711008E8E16 /* IHPRequestListTableViewController.m */; };
 		764D88461BE261D800FF900D /* IHPCreateRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764D88451BE261D800FF900D /* IHPCreateRequestViewController.m */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C20BEB21BE3A85C005212A0 /* IHPCreateUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPCreateUserViewController.h; sourceTree = "<group>"; };
+		4C20BEB31BE3A85C005212A0 /* IHPCreateUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPCreateUserViewController.m; sourceTree = "<group>"; };
 		4C6966E81BE290BC004A26D8 /* IHPUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPUserLoginViewController.h; sourceTree = "<group>"; };
 		4C6966E91BE290BC004A26D8 /* IHPUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPUserLoginViewController.m; sourceTree = "<group>"; };
 		76215B9C1BE14711008E8E16 /* IHPRequestListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPRequestListTableViewController.h; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 			children = (
 				4C6966E81BE290BC004A26D8 /* IHPUserLoginViewController.h */,
 				4C6966E91BE290BC004A26D8 /* IHPUserLoginViewController.m */,
+				4C20BEB21BE3A85C005212A0 /* IHPCreateUserViewController.h */,
+				4C20BEB31BE3A85C005212A0 /* IHPCreateUserViewController.m */,
 				768A8E061BDFEB1200805359 /* IHPRequestFeedTableViewCell.h */,
 				768A8E071BDFEB1200805359 /* IHPRequestFeedTableViewCell.m */,
 				768A8E001BDFE60200805359 /* IHPFeedTableViewController.h */,
@@ -453,6 +458,7 @@
 				76DD6B8C1BDA778900245D0B /* iHelp.xcdatamodeld in Sources */,
 				768A8E081BDFEB1200805359 /* IHPRequestFeedTableViewCell.m in Sources */,
 				768A8E021BDFE60200805359 /* IHPFeedTableViewController.m in Sources */,
+				4C20BEB41BE3A85C005212A0 /* IHPCreateUserViewController.m in Sources */,
 				76DD6BC31BDA7ABD00245D0B /* IHPUser.m in Sources */,
 				764D88461BE261D800FF900D /* IHPCreateRequestViewController.m in Sources */,
 				76DD6B831BDA778900245D0B /* AppDelegate.m in Sources */,

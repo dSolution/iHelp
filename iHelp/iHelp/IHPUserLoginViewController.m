@@ -27,14 +27,15 @@
     // Create a reference to a Firebase database URL
     self.rootRef = [[Firebase alloc] initWithUrl:@"https://luminous-torch-5235.firebaseIO.com"];
     
-    // Write data to Firebase
-    //    [myRootRef setValue:@"Leo test."];
     
-    // Read data and react to changes
-//    [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+    // Write data to Firebase
+//    [self.rootRef setValue:@"Leo test2."];
+    
+//     Read data and react to changes
+//    [self.rootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
 //        NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
 //    }];
-    
+
     
 //    Firebase *ref = [[Firebase alloc] initWithUrl:@"https://luminous-torch-5235.firebaseIO.com"];
 //    [ref authAnonymouslyWithCompletionBlock:^(NSError *error, FAuthData *authData) {
@@ -78,7 +79,7 @@
 
 - (void)createAlert{
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Invalid login username or password"
-                                                                   message:@"Please re-enter"
+                                                                   message:@"Please try again"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
