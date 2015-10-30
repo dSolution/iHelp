@@ -69,7 +69,7 @@
             NSLog(@"log in failed");
         } else {
             self.isValidLogin = YES;
-            [self fetchLoggedinUserData];
+            [self fetchLoggedinUserDataWithID: authData.uid];
             [self performSegueWithIdentifier:@"loginSegue" sender:self];
             NSLog(@"log in successfully");
         }
@@ -90,9 +90,9 @@
 }
 
 
-- (void)fetchLoggedinUserData{
+- (void)fetchLoggedinUserDataWithID:(NSString *)uid{
     IHPRequestDataStore *data = [IHPRequestDataStore sharedDataStore];
-    [data fetchDataWithUsername:@"leof99"];
+    [data fetchDataWithUID:uid];
 }
 
 @end

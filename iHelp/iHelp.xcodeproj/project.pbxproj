@@ -170,9 +170,9 @@
 		76DD6B7D1BDA778900245D0B /* iHelp */ = {
 			isa = PBXGroup;
 			children = (
-				76DD6BB71BDA77E900245D0B /* ObjectModels */,
 				76DD6BB61BDA77E100245D0B /* Misc */,
 				76DD6BB51BDA77D300245D0B /* Storyboards */,
+				76DD6BB71BDA77E900245D0B /* ObjectModels */,
 				76DD6BB41BDA77CA00245D0B /* Controllers */,
 				76DD6B8A1BDA778900245D0B /* iHelp.xcdatamodeld */,
 				76DD6B7E1BDA778900245D0B /* Supporting Files */,

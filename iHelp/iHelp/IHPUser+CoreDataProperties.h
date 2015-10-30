@@ -2,7 +2,7 @@
 //  IHPUser+CoreDataProperties.h
 //  iHelp
 //
-//  Created by Kevin Lin on 10/23/15.
+//  Created by Kevin Lin on 10/30/15.
 //  Copyright © 2015 IHP. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,17 +15,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IHPUser (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *username;
-@property (nullable, nonatomic, retain) NSString *location;
+@property (nullable, nonatomic, retain) NSString *areaOfInterest;
+@property (nonatomic) NSTimeInterval dateJoined;
 @property (nullable, nonatomic, retain) NSString *email;
 @property (nullable, nonatomic, retain) NSString *firstname;
-@property (nullable, nonatomic, retain) NSString *lastname;
-@property (nullable, nonatomic, retain) NSString *profilePicURL;
 @property (nullable, nonatomic, retain) NSString *gender;
-@property (nullable, nonatomic, retain) NSString *areaOfInterest;
 @property (nullable, nonatomic, retain) NSString *intro;
+@property (nullable, nonatomic, retain) NSString *lastname;
+@property (nullable, nonatomic, retain) NSString *location;
+@property (nullable, nonatomic, retain) NSString *profilePicURL;
 @property (nonatomic) int64_t rating;
-@property (nonatomic) NSTimeInterval dateJoined;
+@property (nullable, nonatomic, retain) NSString *username;
+@property (nullable, nonatomic, retain) NSString *uid;
 @property (nullable, nonatomic, retain) NSSet<IHPRequest *> *requests;
 @property (nullable, nonatomic, retain) NSSet<IHPRequest *> *requestsHelped;
 

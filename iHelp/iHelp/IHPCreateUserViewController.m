@@ -7,6 +7,7 @@
 //
 
 #import "IHPCreateUserViewController.h"
+#import "IHPRequestDataStore.h"
 #import <Firebase/Firebase.h>
 
 
@@ -39,6 +40,25 @@
             [self createAlert];
         } else {
             NSString *uid = [result objectForKey:@"uid"];
+            
+            IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
+            NSManagedObjectContext *manageContext = dataStore.managedObjectContext;
+            
+            IHPUser *user = [NSEntityDescription insertNewObjectForEntityForName:@"IHPUser" inManagedObjectContext:manageContext];
+            
+            user.username = self.usernameField.text;
+            user.uid = uid;
+            user.location = @"";
+            user.email = self.usernameField.text;
+            user.firstname = @"";
+            user.lastname = @"";
+            user.profilePicURL = @"";
+            user.gender = @"";
+            user.areaOfInterest = @"";
+            user.intro = @"";
+            NSDate *today = [NSDate date];
+            user.dateJoined = [today timeIntervalSinceReferenceDate];            
+
             NSLog(@"Successfully created user account with uid: %@", uid);
         }
     }];

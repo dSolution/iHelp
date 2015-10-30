@@ -93,6 +93,21 @@
     self.requests = [self.managedObjectContext executeFetchRequest:retrieveAllRequests error:nil];
 }
 
+-(void)fetchDataWithUID:(NSString *)uid{
+    //Retrieving data from storage
+    NSFetchRequest *retrieveAllRequests = [NSFetchRequest fetchRequestWithEntityName:@"IHPRequest"];
+    NSFetchRequest *retrieveAllUsers = [NSFetchRequest fetchRequestWithEntityName:@"IHPUser"];
+    
+    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"uid MATCHES %@", uid];
+    retrieveAllUsers.predicate = userPredicate;
+    NSArray *users = [self.managedObjectContext executeFetchRequest:retrieveAllUsers error:nil];
+    self.user = users[0];
+    
+    //NSPredicate *categoryPredicate = [NSPredicate predicateWithFormat:@"requestCategory MATCHES[c] %@", self.user.areaOfInterest];
+    //retrieveAllRequests.predicate = categoryPredicate;
+    self.requests = [self.managedObjectContext executeFetchRequest:retrieveAllRequests error:nil];
+}
+
 -(void)refreshAllRequests{
     NSFetchRequest *retrieveAllRequests = [NSFetchRequest fetchRequestWithEntityName:@"IHPRequest"];
     self.requests = [self.managedObjectContext executeFetchRequest:retrieveAllRequests error:nil];

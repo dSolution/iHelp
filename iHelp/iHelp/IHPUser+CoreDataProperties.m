@@ -2,7 +2,7 @@
 //  IHPUser+CoreDataProperties.m
 //  iHelp
 //
-//  Created by Kevin Lin on 10/23/15.
+//  Created by Kevin Lin on 10/30/15.
 //  Copyright © 2015 IHP. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,17 +13,18 @@
 
 @implementation IHPUser (CoreDataProperties)
 
-@dynamic username;
-@dynamic location;
+@dynamic areaOfInterest;
+@dynamic dateJoined;
 @dynamic email;
 @dynamic firstname;
-@dynamic lastname;
-@dynamic profilePicURL;
 @dynamic gender;
-@dynamic areaOfInterest;
 @dynamic intro;
+@dynamic lastname;
+@dynamic location;
+@dynamic profilePicURL;
 @dynamic rating;
-@dynamic dateJoined;
+@dynamic username;
+@dynamic uid;
 @dynamic requests;
 @dynamic requestsHelped;
 

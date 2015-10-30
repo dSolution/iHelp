@@ -26,12 +26,13 @@
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profilePicURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="requests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IHPRequest" inverseName="requestUser" inverseEntity="IHPRequest" syncable="YES"/>
         <relationship name="requestsHelped" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IHPRequest" inverseName="requestHelper" inverseEntity="IHPRequest" syncable="YES"/>
     </entity>
     <elements>
         <element name="IHPRequest" positionX="-63" positionY="-18" width="128" height="240"/>
-        <element name="IHPUser" positionX="-54" positionY="-9" width="128" height="240"/>
+        <element name="IHPUser" positionX="-54" positionY="-9" width="128" height="255"/>
     </elements>
 </model>
