@@ -1,10 +1,13 @@
 PODS:
-  - Firebase (2.4.2)
+  - Bolts/Tasks (1.4.0)
+  - Parse (1.9.1):
+    - Bolts/Tasks (>= 1.4.0)
 
 DEPENDENCIES:
-  - Firebase
+  - Parse
 
 SPEC CHECKSUMS:
-  Firebase: 5e898ed5012c81d28ca5fae1113c6b61a172bc6d
+  Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
 
 COCOAPODS: 0.39.0

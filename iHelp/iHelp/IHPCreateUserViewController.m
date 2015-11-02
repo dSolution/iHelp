@@ -8,8 +8,7 @@
 
 #import "IHPCreateUserViewController.h"
 #import "IHPRequestDataStore.h"
-#import <Firebase/Firebase.h>
-
+#import <Parse/Parse.h>
 
 @interface IHPCreateUserViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -30,42 +29,31 @@
 }
 
 - (IBAction)registerTapped:(id)sender {
+    PFUser *user = [PFUser user];
+    user.username = self.usernameField.text;
+    user.password = self.passwordField.text;
+    user.email = self.usernameField.text;
     
-    Firebase *rootRef = [[Firebase alloc] initWithUrl:@"https://luminous-torch-5235.firebaseIO.com"];
-    
-    //create firebase new user
-    [rootRef createUser:self.usernameField.text password:self.passwordField.text withValueCompletionBlock:^(NSError *error, NSDictionary *result) {
-        if (error) {
-            // There was an error creating the account
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (!error) {
+            PFObject *iUser = [PFObject objectWithClassName:@"IHPUser"];
+            iUser[@"username"] = self.usernameField.text;
+            iUser[@"email"] = self.usernameField.text;
+            iUser[@"uid"] = user.objectId;
+            iUser[@"parent"] = user;
+            
+            [iUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (succeeded) {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }else{
+                    [self createAlert];
+                }
+            }];
+        }else{
             [self createAlert];
-        } else {
-            NSString *uid = [result objectForKey:@"uid"];
-            
-            IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
-            NSManagedObjectContext *manageContext = dataStore.managedObjectContext;
-            
-            IHPUser *user = [NSEntityDescription insertNewObjectForEntityForName:@"IHPUser" inManagedObjectContext:manageContext];
-            
-            user.username = self.usernameField.text;
-            user.uid = uid;
-            user.location = @"";
-            user.email = self.usernameField.text;
-            user.firstname = @"";
-            user.lastname = @"";
-            user.profilePicURL = @"defaultProfilePicture";
-            user.gender = @"";
-            user.areaOfInterest = @"";
-            user.intro = @"";
-            NSDate *today = [NSDate date];
-            user.dateJoined = [today timeIntervalSinceReferenceDate];            
-
-            NSLog(@"Successfully created user account with uid: %@", uid);
         }
     }];
     
-    
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)createAlert{

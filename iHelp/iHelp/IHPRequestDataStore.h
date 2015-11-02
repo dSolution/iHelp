@@ -10,15 +10,18 @@
 #import <CoreData/CoreData.h>
 #import "IHPUser.h"
 #import "IHPRequest.h"
+#import <Parse/Parse.h>
 
 @interface IHPRequestDataStore : NSObject
 
 @property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *requests;
 @property (nonatomic, strong) IHPUser *user;
+@property (nonatomic, strong) PFObject *userData;
 
 + (instancetype) sharedDataStore;
 - (void) saveContext;
+-(void)fetchUserData;
 - (void) fetchDataWithUsername:(NSString *)username;
 -(void)fetchDataWithUID:(NSString *)uid;
 -(void)refreshAllRequests;

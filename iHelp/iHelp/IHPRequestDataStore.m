@@ -77,6 +77,22 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+-(void)fetchUserData{
+    PFObject *user= [PFUser currentUser];
+    
+    // Using NSPredicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"parent = %@", user];
+    PFQuery *query = [PFQuery queryWithClassName:@"IHPUser" predicate:predicate];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        
+        if (!error) {
+            self.userData = object;
+        }else{
+            NSLog(@"Issue!!!!!!!!!!!!!!!!!!!!!");
+        }
+        
+    }];
+}
 
 -(void)fetchDataWithUsername:(NSString *)username{
     //Retrieving data from storage

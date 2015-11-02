@@ -7,6 +7,7 @@
 //
 
 #import "IHPFeedTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface IHPFeedTableViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
@@ -21,44 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
-//        NSManagedObjectContext *manageContext = dataStore.managedObjectContext;
-//    
-//        IHPUser *ben = [NSEntityDescription insertNewObjectForEntityForName:@"IHPUser" inManagedObjectContext:manageContext];
-//    
-//        ben.username = @"bennyBoy123";
-//        ben.location = @"New York";
-//        ben.email = @"bennyboyWithGirl@gmail.com";
-//        ben.firstname = @"Ben";
-//        ben.lastname = @"Gao";
-//        ben.profilePicURL = @"ben";
-//        ben.gender = @"Male";
-//        ben.areaOfInterest = @"car";
-//        ben.intro = @"My name is Benny and i am a car collector.";
-//        NSDate *today = [NSDate date];
-//        ben.dateJoined = [today timeIntervalSinceReferenceDate];
-//    
-//        IHPRequest *request = [NSEntityDescription insertNewObjectForEntityForName:@"IHPRequest" inManagedObjectContext:manageContext];
-//        request.requestUser = ben;
-//        request.requestTitle = @"Looking for the super hot Pagani car";
-//        request.requestDescription = @"Contact me if you have one, I have a lot of money";
-//        request.requestImageURL = @"zondaF";
-//        request.requestCategory = @"car";
-//        request.requestViewCount = 10000;
-//        request.requestReward = YES;
-//        request.requestRewardDescription = @"Negotiable";
-//        request.requestDate = [today timeIntervalSinceReferenceDate];
-//        request.requestDuration = 365;
-//        request.requestStatus = @"Open";
-//        
-//        [dataStore saveContext];
 
-    self.dataStore = [IHPRequestDataStore sharedDataStore];
-    
-    self.usernameTextLabel.text = self.dataStore.user.username;
-    UIImage *userProfileImage = [UIImage imageNamed:self.dataStore.user.profilePicURL];
-    self.userProfileImageView.image = userProfileImage;
+    //UIImage *userProfileImage = [UIImage imageNamed:self.dataStore.user.profilePicURL];
+    //self.userProfileImageView.image = userProfileImage;
     
     
 }
@@ -66,10 +32,21 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    self.dataStore = [IHPRequestDataStore sharedDataStore];
+    [self.dataStore fetchUserData];
+    PFObject *user = self.dataStore.userData;
+    
+    self.usernameTextLabel.text = user[@"username"];
+    
     [self.tableView reloadData];
     self.tabBarController.tabBar.hidden = NO;
 }
 
+- (IBAction)userLogout:(id)sender {
+    [PFUser logOut];
+    PFUser *currentUser = [PFUser currentUser];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
