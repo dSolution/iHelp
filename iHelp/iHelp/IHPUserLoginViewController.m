@@ -46,7 +46,11 @@
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * _Nullable user, NSError * _Nullable error) {
         if (user) {
             self.isValidLogin = YES;
-            [self performSegueWithIdentifier:@"loginSegue" sender:self];
+            IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
+            [dataStore fetchUserData];
+            
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login) name:@"dataLoaded" object:nil];
+            
             NSLog(@"Login successfully!");
         }
         else{
@@ -57,6 +61,9 @@
     }];
 }
 
+-(void)login{
+    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+}
 
 - (void)createAlert{
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Invalid login username or password"
@@ -71,9 +78,9 @@
 }
 
 
-- (void)fetchLoggedinUserDataWithID:(NSString *)uid{
-    IHPRequestDataStore *data = [IHPRequestDataStore sharedDataStore];
-    [data fetchDataWithUID:uid];
-}
+//- (void)fetchLoggedinUserDataWithID:(NSString *)uid{
+//    IHPRequestDataStore *data = [IHPRequestDataStore sharedDataStore];
+//    [data fetchDataWithUID:uid];
+//}
 
 @end

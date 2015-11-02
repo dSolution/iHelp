@@ -92,37 +92,65 @@
         }
         
     }];
+    
+    PFQuery *photeQuery = [PFQuery queryWithClassName:@"Photos"];
+    
+    [photeQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        
+        NSLog(@"Retrieved data");
+        
+        if (!error) {
+            NSLog(@"Image name: %@", user[@"profilePic"]);
+            
+            PFFile *file = [object objectForKey:user[@"profilePic"]];
+            NSLog(@"Retieving Image!!!!!!!!!!");
+            [file getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+                if (!error) {
+                    UIImage *image = [UIImage imageWithData:data];
+                    self.profilePic = image;
+                    
+                    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+                    [center postNotificationName:@"dataLoaded" object:nil];
+                    
+                }else{
+                    NSLog(@"Unable to retrieve profile image!");
+                }
+            }];
+        }else{
+            NSLog(@"Error: %@", error.description);
+        }
+    }];
 }
 
--(void)fetchDataWithUsername:(NSString *)username{
-    //Retrieving data from storage
-    NSFetchRequest *retrieveAllRequests = [NSFetchRequest fetchRequestWithEntityName:@"IHPRequest"];
-    NSFetchRequest *retrieveAllUsers = [NSFetchRequest fetchRequestWithEntityName:@"IHPUser"];
-    
-    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"username MATCHES %@", username];
-    retrieveAllUsers.predicate = userPredicate;
-    NSArray *users = [self.managedObjectContext executeFetchRequest:retrieveAllUsers error:nil];
-    self.user = users[0];
-    
-    //NSPredicate *categoryPredicate = [NSPredicate predicateWithFormat:@"requestCategory MATCHES[c] %@", self.user.areaOfInterest];
-    //retrieveAllRequests.predicate = categoryPredicate;
-    self.requests = [self.managedObjectContext executeFetchRequest:retrieveAllRequests error:nil];
-}
-
--(void)fetchDataWithUID:(NSString *)uid{
-    //Retrieving data from storage
-    NSFetchRequest *retrieveAllRequests = [NSFetchRequest fetchRequestWithEntityName:@"IHPRequest"];
-    NSFetchRequest *retrieveAllUsers = [NSFetchRequest fetchRequestWithEntityName:@"IHPUser"];
-    
-    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"uid MATCHES %@", uid];
-    retrieveAllUsers.predicate = userPredicate;
-    NSArray *users = [self.managedObjectContext executeFetchRequest:retrieveAllUsers error:nil];
-    self.user = users[0];
-    
-    //NSPredicate *categoryPredicate = [NSPredicate predicateWithFormat:@"requestCategory MATCHES[c] %@", self.user.areaOfInterest];
-    //retrieveAllRequests.predicate = categoryPredicate;
-    self.requests = [self.managedObjectContext executeFetchRequest:retrieveAllRequests error:nil];
-}
+//-(void)fetchDataWithUsername:(NSString *)username{
+//    //Retrieving data from storage
+//    NSFetchRequest *retrieveAllRequests = [NSFetchRequest fetchRequestWithEntityName:@"IHPRequest"];
+//    NSFetchRequest *retrieveAllUsers = [NSFetchRequest fetchRequestWithEntityName:@"IHPUser"];
+//    
+//    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"username MATCHES %@", username];
+//    retrieveAllUsers.predicate = userPredicate;
+//    NSArray *users = [self.managedObjectContext executeFetchRequest:retrieveAllUsers error:nil];
+//    self.user = users[0];
+//    
+//    //NSPredicate *categoryPredicate = [NSPredicate predicateWithFormat:@"requestCategory MATCHES[c] %@", self.user.areaOfInterest];
+//    //retrieveAllRequests.predicate = categoryPredicate;
+//    self.requests = [self.managedObjectContext executeFetchRequest:retrieveAllRequests error:nil];
+//}
+//
+//-(void)fetchDataWithUID:(NSString *)uid{
+//    //Retrieving data from storage
+//    NSFetchRequest *retrieveAllRequests = [NSFetchRequest fetchRequestWithEntityName:@"IHPRequest"];
+//    NSFetchRequest *retrieveAllUsers = [NSFetchRequest fetchRequestWithEntityName:@"IHPUser"];
+//    
+//    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"uid MATCHES %@", uid];
+//    retrieveAllUsers.predicate = userPredicate;
+//    NSArray *users = [self.managedObjectContext executeFetchRequest:retrieveAllUsers error:nil];
+//    self.user = users[0];
+//    
+//    //NSPredicate *categoryPredicate = [NSPredicate predicateWithFormat:@"requestCategory MATCHES[c] %@", self.user.areaOfInterest];
+//    //retrieveAllRequests.predicate = categoryPredicate;
+//    self.requests = [self.managedObjectContext executeFetchRequest:retrieveAllRequests error:nil];
+//}
 
 -(void)refreshAllRequests{
     NSFetchRequest *retrieveAllRequests = [NSFetchRequest fetchRequestWithEntityName:@"IHPRequest"];

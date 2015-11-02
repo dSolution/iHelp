@@ -18,12 +18,13 @@
 @property (nonatomic, strong) NSArray *requests;
 @property (nonatomic, strong) IHPUser *user;
 @property (nonatomic, strong) PFObject *userData;
+@property (nonatomic, strong) UIImage *profilePic;
 
 + (instancetype) sharedDataStore;
 - (void) saveContext;
 -(void)fetchUserData;
-- (void) fetchDataWithUsername:(NSString *)username;
--(void)fetchDataWithUID:(NSString *)uid;
+//- (void) fetchDataWithUsername:(NSString *)username;
+//-(void)fetchDataWithUID:(NSString *)uid;
 -(void)refreshAllRequests;
 
 @end

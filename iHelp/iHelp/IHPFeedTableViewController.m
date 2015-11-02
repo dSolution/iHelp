@@ -24,7 +24,7 @@
     [super viewDidLoad];
 
     //UIImage *userProfileImage = [UIImage imageNamed:self.dataStore.user.profilePicURL];
-    //self.userProfileImageView.image = userProfileImage;
+   
     
     
 }
@@ -33,9 +33,8 @@
     [super viewWillAppear:animated];
     
     self.dataStore = [IHPRequestDataStore sharedDataStore];
-    [self.dataStore fetchUserData];
     PFObject *user = self.dataStore.userData;
-    
+     self.userProfileImageView.image = self.dataStore.profilePic;
     self.usernameTextLabel.text = user[@"username"];
     
     [self.tableView reloadData];

@@ -36,27 +36,27 @@
     
     self.dataStore = [IHPRequestDataStore sharedDataStore];
     
-    IHPUser *user = self.dataStore.user;
+    PFObject *user = self.dataStore.userData;
     
-    self.profilePictureView.image = [UIImage imageNamed:user.profilePicURL];
-    self.profileUsernameLabel.text = user.username;
-    self.profileEmailLabel.text = user.email;
-    self.profileFirstNameLabel.text = user.firstname;
-    self.profileLastNameLabel.text = user.lastname;
+    self.profilePictureView.image = self.dataStore.profilePic;
+    self.profileUsernameLabel.text = user[@"username"];
+    self.profileEmailLabel.text = user[@"email"];
+    self.profileFirstNameLabel.text = user[@"firstname"];
+    self.profileLastNameLabel.text = user[@"lastname"];
     
-    NSPredicate *completedRequestPredicate = [NSPredicate predicateWithFormat:@"requestStatus MATCHES 'closed'"];
-    self.completedRequestList = [user.requests filteredSetUsingPredicate:completedRequestPredicate];
-    self.completedRequestCell.textLabel.text = @"Closed Requests";
-    self.completedRequestCell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", self.completedRequestList.count];
-    
-    
-    NSPredicate *openRequestPredicate = [NSPredicate predicateWithFormat:@"NOT (requestStatus MATCHES 'closed')"];
-    self.openRequestList = [user.requests filteredSetUsingPredicate:openRequestPredicate];
-    self.openRequestCell.textLabel.text = @"Open Requests";
-    self.openRequestCell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", self.openRequestList.count];
-    
-    self.respondedRequestCell.textLabel.text = @"Responded Requests";
-    self.respondedRequestCell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", user.requestsHelped.count];
+//    NSPredicate *completedRequestPredicate = [NSPredicate predicateWithFormat:@"requestStatus MATCHES 'closed'"];
+//    self.completedRequestList = [user.requests filteredSetUsingPredicate:completedRequestPredicate];
+//    self.completedRequestCell.textLabel.text = @"Closed Requests";
+//    self.completedRequestCell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", self.completedRequestList.count];
+//    
+//    
+//    NSPredicate *openRequestPredicate = [NSPredicate predicateWithFormat:@"NOT (requestStatus MATCHES 'closed')"];
+//    self.openRequestList = [user.requests filteredSetUsingPredicate:openRequestPredicate];
+//    self.openRequestCell.textLabel.text = @"Open Requests";
+//    self.openRequestCell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", self.openRequestList.count];
+//    
+//    self.respondedRequestCell.textLabel.text = @"Responded Requests";
+//    self.respondedRequestCell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", user.requestsHelped.count];
 }
 
 - (IBAction)displayProfileSetting:(UIButton *)sender {

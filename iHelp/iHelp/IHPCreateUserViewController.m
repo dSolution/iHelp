@@ -41,9 +41,20 @@
             iUser[@"email"] = self.usernameField.text;
             iUser[@"uid"] = user.objectId;
             iUser[@"parent"] = user;
+//            UIImage *image = [UIImage imageNamed:@"ben"];
+//            NSData *data = UIImageJPEGRepresentation(image, 0.5f);
+//            PFFile *imageFile = [PFFile fileWithName:@"ben" data:data];
             
             [iUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                 if (succeeded) {
+//                    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+//                        if (!error) {
+//                            PFObject *profilePic = [PFObject objectWithClassName:@"Photos"];
+//                            [profilePic setObject:imageFile forKey:@"ben"];
+//                            
+//                            [profilePic saveInBackground];
+//                        }
+//                    }];
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }else{
                     [self createAlert];
