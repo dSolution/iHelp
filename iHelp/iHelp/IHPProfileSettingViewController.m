@@ -54,24 +54,23 @@
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     self.activeField = textField;
     
+    CGFloat textFieldHeight = textField.frame.size.height;
     
     CGPoint location = [textField convertPoint:textField.center toView:self.scrollView];
-    CGFloat yPoint = [[UIScreen mainScreen] bounds].size.height - self.keyboardHeight;
+    CGFloat yPoint = self.scrollView.frame.size.height - self.keyboardHeight;
     
-    CGFloat yPosition = location.y + 60;
+    CGFloat yPosition = location.y + (textFieldHeight/2);
     
-    NSLog(@"yPoint: %f, yLocation: %f", yPoint, yPosition);
+    NSLog(@"yPoint: %f, yPosition: %f", yPoint, yPosition);
     CGPoint scrollOffset = CGPointMake(0, (yPosition - yPoint));
     
     if (yPosition > yPoint) {
         NSLog(@"GETTING CALLED@!@@@\n\n");
         [self.currentScrollView setContentOffset:scrollOffset animated:YES];
     }
-
 }
 
 -(void)keyBoardHideOrSHow:(NSNotification *)note{
-
     CGRect keyBoardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     if ([note.name isEqualToString:UIKeyboardWillHideNotification]) {
         keyBoardFrame = CGRectZero;
@@ -85,11 +84,11 @@
         self.contentViewHeight.constant = self.initialHeightConstant + self.keyboardHeight;
         [self.view layoutIfNeeded];
     }];
-    
 }
 
 - (IBAction)saveSettings:(id)sender {
 }
+
 - (IBAction)cancelSettings:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

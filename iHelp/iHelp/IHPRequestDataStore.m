@@ -120,6 +120,10 @@
             NSLog(@"Error: %@", error.description);
         }
     }];
+    
+    //pin user object to local store - making log in blazing fast !
+    [user pinInBackground];
+    [self.userData pinInBackground];
 }
 
 //-(void)fetchDataWithUsername:(NSString *)username{

@@ -24,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *requestDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UITextField *requestRewardDescriptionLabel;
 
+@property (strong, nonatomic) IHPRequestDataStore *dataStore;
+
 
 @end
 
@@ -31,10 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    
-    
+
+    self.dataStore = [IHPRequestDataStore sharedDataStore];
 }
 
 // category selection
@@ -88,27 +88,52 @@
 }
 
 - (IBAction)saveRequestApplication:(id)sender {
-    IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
-    NSManagedObjectContext *manageContext = dataStore.managedObjectContext;
-    
-    IHPRequest *request = [NSEntityDescription insertNewObjectForEntityForName:@"IHPRequest" inManagedObjectContext:manageContext];
-    request.requestUser = dataStore.user;
+//    IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
+//    NSManagedObjectContext *manageContext = dataStore.managedObjectContext;
+//    
+//    IHPRequest *request = [NSEntityDescription insertNewObjectForEntityForName:@"IHPRequest" inManagedObjectContext:manageContext];
+//    request.requestUser = dataStore.user;
+//    
+//    NSDate *today = [NSDate date];
+//    request.requestTitle = self.requestTitleLabel.text;
+//    request.requestDescription = self.requestDescriptionLabel.text;
+//    request.requestImageURL = @"zondaF";
+//    request.requestCategory = self.categoryTextField.text;
+//    request.requestViewCount = 0;
+//    request.requestReward = self.rewardSwitch.on;
+//    request.requestRewardDescription = self.requestRewardDescriptionLabel.text;
+//    request.requestDate = [today timeIntervalSinceReferenceDate];
+//    request.requestDuration = self.durationTextField.text.integerValue;
+//    request.requestStatus = @"Open";
+//    
+//    [dataStore saveContext];
+//    [dataStore refreshAllRequests];
     
     NSDate *today = [NSDate date];
-    request.requestTitle = self.requestTitleLabel.text;
-    request.requestDescription = self.requestDescriptionLabel.text;
-    request.requestImageURL = @"zondaF";
-    request.requestCategory = self.categoryTextField.text;
-    request.requestViewCount = 0;
-    request.requestReward = self.rewardSwitch.on;
-    request.requestRewardDescription = self.requestRewardDescriptionLabel.text;
-    request.requestDate = [today timeIntervalSinceReferenceDate];
-    request.requestDuration = self.durationTextField.text.integerValue;
-    request.requestStatus = @"Open";
+    PFObject *newRequest = [PFObject objectWithClassName:@"IHPRequest"];
+    newRequest[@"requestTitle"] = self.requestTitleLabel.text;
+    newRequest[@"requestDescription"] = self.categoryTextField.text;
+    newRequest[@"requestImageURL"] = @"zondaF";
+    newRequest[@"requestCategory"] = self.categoryTextField.text;
+    newRequest[@"requestViewCount"] = @(0);
+    newRequest[@"requestRewardDescription"] = self.requestRewardDescriptionLabel.text;
+    newRequest[@"requestReward"] = [NSNumber numberWithBool:self.rewardSwitch.on];
+    newRequest[@"requestDate"] = today;
+    newRequest[@"requestDuration"] = @(self.durationTextField.text.integerValue);
+    newRequest[@"requestRewardDescription"] = self.requestRewardDescriptionLabel.text;
+    newRequest[@"requestStatus"] = @"Open";
+    newRequest[@"requestOwner"] = self.dataStore.userData;
     
-    [dataStore saveContext];
-    [dataStore refreshAllRequests];
-    
+    [newRequest saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+            NSLog(@"new request saved!");
+        } else {
+            // There was a problem, check error.description
+            NSLog(@"new request error!");
+        }
+    }];
+
     self.tabBarController.selectedIndex = 0;
 }
 
