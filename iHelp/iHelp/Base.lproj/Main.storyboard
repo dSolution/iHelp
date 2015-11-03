@@ -227,6 +227,8 @@
                     <connections>
                         <outlet property="contentViewHeight" destination="rlw-t4-DhF" id="FyY-ZH-29K"/>
                         <outlet property="currentScrollView" destination="6BF-N4-KJi" id="Ivi-La-wma"/>
+                        <outlet property="emailField" destination="2le-IK-xaj" id="rl6-1c-jtZ"/>
+                        <outlet property="firstnameField" destination="owk-uJ-BJy" id="giP-bq-Idl"/>
                         <outlet property="genderPicker" destination="gew-r5-bV7" id="fhx-kF-b3T"/>
                         <outlet property="imageView" destination="psW-i0-qqT" id="KfX-bv-xsD"/>
                         <outlet property="interestsField" destination="kTg-Zs-j6U" id="Gri-Fy-a9R"/>

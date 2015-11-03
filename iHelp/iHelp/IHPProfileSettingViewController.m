@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) NSLayoutConstraint *currentFieldConstraint;
 
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextField *firstnameField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderPicker;
 @property (weak, nonatomic) IBOutlet UITextField *lastnameField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -42,6 +44,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    self.emailField.delegate = self;
+    self.firstnameField.delegate = self;
     self.interestsField.delegate = self;
     self.introField.delegate = self;
     self.lastnameField.delegate = self;
@@ -54,27 +58,26 @@
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     self.activeField = textField;
     
-    
+    [self.currentScrollView setScrollEnabled:YES];
     CGPoint location = [textField convertPoint:textField.center toView:self.scrollView];
     CGFloat yPoint = [[UIScreen mainScreen] bounds].size.height - self.keyboardHeight;
     
     CGFloat yPosition = location.y + 60;
     
-    NSLog(@"yPoint: %f, yLocation: %f", yPoint, yPosition);
     CGPoint scrollOffset = CGPointMake(0, (yPosition - yPoint));
     
     if (yPosition > yPoint) {
-        NSLog(@"GETTING CALLED@!@@@\n\n");
         [self.currentScrollView setContentOffset:scrollOffset animated:YES];
     }
+    [self.currentScrollView setScrollEnabled:NO];
 
 }
 
 -(void)keyBoardHideOrSHow:(NSNotification *)note{
-
     CGRect keyBoardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     if ([note.name isEqualToString:UIKeyboardWillHideNotification]) {
         keyBoardFrame = CGRectZero;
+        [self.currentScrollView setScrollEnabled:YES];
     }
     
     UIViewAnimationCurve curve = [note.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
