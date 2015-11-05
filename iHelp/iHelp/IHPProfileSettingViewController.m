@@ -36,9 +36,7 @@
     [super viewDidLoad];
     
     self.initialHeightConstant = [[UIScreen mainScreen] bounds].size.height;
-    
     [self.currentScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-    //[self.view layoutIfNeeded];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

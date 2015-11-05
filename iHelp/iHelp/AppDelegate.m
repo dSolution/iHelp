@@ -10,6 +10,7 @@
 #import "IHPRequestDataStore.h"
 #import "IHPRequest.h"
 #import "IHPUser.h"
+#import "IHPConstants.h"
 #import <Parse/Parse.h>
 
 @interface AppDelegate ()
@@ -18,13 +19,11 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [Parse setApplicationId:@"ohEzZGrjlaA45d65URVvZLIGfyExmSn1FaNOYRUK"
-                  clientKey:@"u2A5wxHsYaZnYc97VoBcnZ4rPCHNhZJqjLbAF8hF"];
+    [Parse setApplicationId:PARSE_APPLICATION_KEY
+                  clientKey:PARSE_CLIENT_KEY];
     
     return YES;
 }
-
 
 @end

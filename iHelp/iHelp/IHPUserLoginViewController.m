@@ -22,20 +22,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    PFUser *currentUser = [PFUser currentUser];
-    if (currentUser) {
-        self.isValidLogin = YES;
-        [self performSegueWithIdentifier:@"loginSegue" sender:self];
-        NSLog(@"Current user login!");
-    } else {
-        self.isValidLogin = NO;
-    }
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
     self.usernameField.text = @"";
     self.passwordField.text = @"";
 }
@@ -47,11 +38,12 @@
         if (user) {
             self.isValidLogin = YES;
             IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
-            [dataStore fetchUserData];
-            
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login) name:@"dataLoaded" object:nil];
-            
-            NSLog(@"Login successfully!");
+            [dataStore getUserFromLogin:^(BOOL success) {
+                if (success) {
+                    NSLog(@"Login successfully!");
+                    [self login];
+                }
+            }];
         }
         else{
             self.isValidLogin = NO;
@@ -76,11 +68,5 @@
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
-
-
-//- (void)fetchLoggedinUserDataWithID:(NSString *)uid{
-//    IHPRequestDataStore *data = [IHPRequestDataStore sharedDataStore];
-//    [data fetchDataWithUID:uid];
-//}
 
 @end

@@ -20,21 +20,12 @@
 
 @implementation IHPFeedTableViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    //UIImage *userProfileImage = [UIImage imageNamed:self.dataStore.user.profilePicURL];
-   
-    
-    
-}
-
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
     self.dataStore = [IHPRequestDataStore sharedDataStore];
     PFObject *user = self.dataStore.userData;
-     self.userProfileImageView.image = self.dataStore.profilePic;
+    self.userProfileImageView.image = self.dataStore.profilePic;
     self.usernameTextLabel.text = user[@"username"];
     
     [self.tableView reloadData];
@@ -44,6 +35,7 @@
 - (IBAction)userLogout:(id)sender {
     [PFUser logOut];
     PFUser *currentUser = [PFUser currentUser];
+    [currentUser saveInBackground];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 #pragma mark - Table view data source
