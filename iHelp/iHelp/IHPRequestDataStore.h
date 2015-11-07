@@ -22,9 +22,9 @@
 
 + (instancetype) sharedDataStore;
 - (void) saveContext;
--(void)fetchUserData;
+- (void)fetchUserData;
 //- (void) fetchDataWithUsername:(NSString *)username;
 //-(void)fetchDataWithUID:(NSString *)uid;
--(void)refreshAllRequests;
+- (void)refreshAllRequests;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "IHPRequestDataStore.h"
+#import "IHPParseAPIClient.h"
 
 @implementation IHPRequestDataStore
 @synthesize managedObjectContext = _managedObjectContext;
@@ -77,54 +78,38 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
--(void)fetchUserData{
-    PFObject *user= [PFUser currentUser];
-    
-    // Using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"parent = %@", user];
-    PFQuery *query = [PFQuery queryWithClassName:@"IHPUser" predicate:predicate];
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
-        
-        if (!error) {
-            self.userData = object;
-        }else{
-            NSLog(@"Issue!!!!!!!!!!!!!!!!!!!!!");
-        }
-        
-    }];
-    
-    PFQuery *photeQuery = [PFQuery queryWithClassName:@"Photos"];
-    
-    [photeQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        
-        NSLog(@"Retrieved data");
-        
-        if (!error) {
-            NSLog(@"Image name: %@", user[@"profilePic"]);
-            
-            PFFile *file = [object objectForKey:user[@"profilePic"]];
-            NSLog(@"Retieving Image!!!!!!!!!!");
-            [file getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-                if (!error) {
-                    UIImage *image = [UIImage imageWithData:data];
-                    self.profilePic = image;
-                    
-                    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-                    [center postNotificationName:@"dataLoaded" object:nil];
-                    
-                }else{
-                    NSLog(@"Unable to retrieve profile image!");
-                }
-            }];
-        }else{
-            NSLog(@"Error: %@", error.description);
-        }
-    }];
-    
-    //pin user object to local store - making log in blazing fast !
-    [user pinInBackground];
-    [self.userData pinInBackground];
-}
+//-(void)fetchUserData{
+//    PFObject *user= [PFUser currentUser];
+//    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"parent = %@", user];
+//    
+//    PFQuery *query = [PFQuery queryWithClassName:@"IHPUser" predicate:predicate];
+//    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+//        if (!error) {
+//            self.userData = object;
+//            
+//            PFFile *profilePicture = [object objectForKey:@"profilePicture"];
+//            [profilePicture getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+//                if (!error) {
+//                    UIImage *profileImage = [UIImage imageWithData:data];
+//                    self.profilePic = profileImage;
+//                    
+//                    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+//                    [center postNotificationName:@"dataLoaded" object:nil];
+//                }else{
+//                    NSLog(@"Unable to get profile image from parse");
+//                }
+//            }];
+//        }else{
+//            NSLog(@"Unable to get userData from parse");
+//        }
+//        
+//    }];
+//    
+//    //pin user object to local store
+//    [user pinInBackground];
+//    [self.userData pinInBackground];
+//}
 
 //-(void)fetchDataWithUsername:(NSString *)username{
 //    //Retrieving data from storage
@@ -159,6 +144,18 @@
 -(void)refreshAllRequests{
     NSFetchRequest *retrieveAllRequests = [NSFetchRequest fetchRequestWithEntityName:@"IHPRequest"];
     self.requests = [self.managedObjectContext executeFetchRequest:retrieveAllRequests error:nil];
+}
+
+- (void)fetchUserData{
+    [IHPParseAPIClient fetchUserProfileDataWithCompletion:^(PFObject *data) {
+        //should generate IHPUser object here 
+        self.userData = data;
+        
+        [IHPParseAPIClient fetchUserProfilePictureWithUserObject:data andCompletion:^(NSData *image) {
+            UIImage *profileImage = [UIImage imageWithData:image];
+            self.profilePic = profileImage;
+        }];
+    }];
 }
 
 @end
