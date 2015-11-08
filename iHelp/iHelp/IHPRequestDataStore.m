@@ -147,8 +147,10 @@
 }
 
 - (void)fetchUserData{
-    [IHPParseAPIClient fetchUserProfileDataWithCompletion:^(PFObject *data) {
-        //should generate IHPUser object here 
+    PFObject *currentUser= [PFUser currentUser];
+    
+    [IHPParseAPIClient fetchUserProfileDataWithUserObject:currentUser andCompletion:^(PFObject *data){
+        //should generate IHPUser object here
         self.userData = data;
         
         [IHPParseAPIClient fetchUserProfilePictureWithUserObject:data andCompletion:^(NSData *image) {

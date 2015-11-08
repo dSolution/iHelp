@@ -11,7 +11,7 @@
 
 @interface IHPParseAPIClient : NSObject
 
-+(void)fetchUserProfileDataWithCompletion:(void (^)(PFObject *data))completionBlock;
++(void)fetchUserProfileDataWithUserObject:(PFObject *)user andCompletion:(void (^)(PFObject *data))completionBlock;
 +(void)fetchUserProfilePictureWithUserObject:(PFObject *)userObject andCompletion:(void (^)(NSData *image))completionBlock;
 
 @end

@@ -10,8 +10,7 @@
 
 @implementation IHPParseAPIClient
 
-+(void)fetchUserProfileDataWithCompletion:(void (^)(PFObject *data))completionBlock{
-    PFObject *user= [PFUser currentUser];
++(void)fetchUserProfileDataWithUserObject:(PFObject *)user andCompletion:(void (^)(PFObject *data))completionBlock{
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"parent = %@", user];
     
     PFQuery *query = [PFQuery queryWithClassName:@"IHPUser" predicate:predicate];
