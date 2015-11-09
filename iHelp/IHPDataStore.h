@@ -19,8 +19,7 @@
 @property (nonatomic, strong) UIImage *profilePic;
 
 + (instancetype) sharedDataStore;
-- (void)saveContext;
+//- (void)saveContext;
 - (void)getUserFromLogin:(void (^)(BOOL))completionBlock;
-- (void)refreshAllRequests;
 
 @end
