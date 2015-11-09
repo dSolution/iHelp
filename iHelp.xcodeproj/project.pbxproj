@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36CACB99190DF71585613613 /* libPods-iHelp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A3294E89CFBC85AF25FE71 /* libPods-iHelp.a */; };
 		768FF1AB1BF0E3B600B4A028 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 768FF1AA1BF0E3B600B4A028 /* main.m */; };
 		768FF1AE1BF0E3B600B4A028 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 768FF1AD1BF0E3B600B4A028 /* AppDelegate.m */; };
-		768FF1B11BF0E3B600B4A028 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 768FF1B01BF0E3B600B4A028 /* ViewController.m */; };
 		768FF1B41BF0E3B600B4A028 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 768FF1B21BF0E3B600B4A028 /* Main.storyboard */; };
 		768FF1B61BF0E3B600B4A028 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 768FF1B51BF0E3B600B4A028 /* Assets.xcassets */; };
 		768FF1B91BF0E3B600B4A028 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 768FF1B71BF0E3B600B4A028 /* LaunchScreen.storyboard */; };
 		768FF1C41BF0E3B600B4A028 /* iHelpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 768FF1C31BF0E3B600B4A028 /* iHelpTests.m */; };
 		768FF1CF1BF0E3B600B4A028 /* iHelpUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 768FF1CE1BF0E3B600B4A028 /* iHelpUITests.m */; };
+		76AD59CA1BF0EC6000EFB09A /* IHPDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 76AD59C91BF0EC6000EFB09A /* IHPDataStore.m */; };
+		76D40C191BF0E6D600DE97C8 /* IHPParseAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D40C181BF0E6D600DE97C8 /* IHPParseAPIClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6882405A85E99B6617A2C0D1 /* Pods-iHelp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHelp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHelp/Pods-iHelp.debug.xcconfig"; sourceTree = "<group>"; };
 		768FF1A61BF0E3B600B4A028 /* iHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		768FF1AA1BF0E3B600B4A028 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		768FF1AC1BF0E3B600B4A028 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		768FF1AD1BF0E3B600B4A028 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		768FF1AF1BF0E3B600B4A028 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		768FF1B01BF0E3B600B4A028 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		768FF1B31BF0E3B600B4A028 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		768FF1B51BF0E3B600B4A028 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		768FF1B81BF0E3B600B4A028 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,12 @@
 		768FF1CA1BF0E3B600B4A028 /* iHelpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iHelpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		768FF1CE1BF0E3B600B4A028 /* iHelpUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iHelpUITests.m; sourceTree = "<group>"; };
 		768FF1D01BF0E3B600B4A028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76AD59C81BF0EC6000EFB09A /* IHPDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPDataStore.h; sourceTree = "<group>"; };
+		76AD59C91BF0EC6000EFB09A /* IHPDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPDataStore.m; sourceTree = "<group>"; };
+		76D40C171BF0E6D600DE97C8 /* IHPParseAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPParseAPIClient.h; sourceTree = "<group>"; };
+		76D40C181BF0E6D600DE97C8 /* IHPParseAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPParseAPIClient.m; sourceTree = "<group>"; };
+		97A3294E89CFBC85AF25FE71 /* libPods-iHelp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iHelp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED412BB30E59E3EDECFDE9B2 /* Pods-iHelp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHelp.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHelp/Pods-iHelp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36CACB99190DF71585613613 /* libPods-iHelp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0572F39F0A4998F92044C28B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97A3294E89CFBC85AF25FE71 /* libPods-iHelp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		768FF19D1BF0E3B600B4A028 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +101,8 @@
 				768FF1C21BF0E3B600B4A028 /* iHelpTests */,
 				768FF1CD1BF0E3B600B4A028 /* iHelpUITests */,
 				768FF1A71BF0E3B600B4A028 /* Products */,
+				9B161C8969AC00065CB96FC3 /* Pods */,
+				0572F39F0A4998F92044C28B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +119,11 @@
 		768FF1A81BF0E3B600B4A028 /* iHelp */ = {
 			isa = PBXGroup;
 			children = (
-				768FF1AC1BF0E3B600B4A028 /* AppDelegate.h */,
-				768FF1AD1BF0E3B600B4A028 /* AppDelegate.m */,
-				768FF1AF1BF0E3B600B4A028 /* ViewController.h */,
-				768FF1B01BF0E3B600B4A028 /* ViewController.m */,
-				768FF1B21BF0E3B600B4A028 /* Main.storyboard */,
-				768FF1B51BF0E3B600B4A028 /* Assets.xcassets */,
-				768FF1B71BF0E3B600B4A028 /* LaunchScreen.storyboard */,
-				768FF1BA1BF0E3B600B4A028 /* Info.plist */,
+				768FF1E01BF0E62500B4A028 /* Objects */,
+				768FF1DF1BF0E60400B4A028 /* Helper */,
+				768FF1DE1BF0E5F700B4A028 /* Controllers */,
+				768FF1DC1BF0E5D500B4A028 /* Misc */,
+				768FF1DD1BF0E5E700B4A028 /* Story Boards */,
 				768FF1A91BF0E3B600B4A028 /* Supporting Files */,
 			);
 			path = iHelp;
@@ -140,6 +155,68 @@
 			path = iHelpUITests;
 			sourceTree = "<group>";
 		};
+		768FF1DC1BF0E5D500B4A028 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				768FF1AC1BF0E3B600B4A028 /* AppDelegate.h */,
+				768FF1AD1BF0E3B600B4A028 /* AppDelegate.m */,
+				768FF1B51BF0E3B600B4A028 /* Assets.xcassets */,
+				768FF1BA1BF0E3B600B4A028 /* Info.plist */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		768FF1DD1BF0E5E700B4A028 /* Story Boards */ = {
+			isa = PBXGroup;
+			children = (
+				768FF1B21BF0E3B600B4A028 /* Main.storyboard */,
+				768FF1B71BF0E3B600B4A028 /* LaunchScreen.storyboard */,
+			);
+			name = "Story Boards";
+			sourceTree = "<group>";
+		};
+		768FF1DE1BF0E5F700B4A028 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		768FF1DF1BF0E60400B4A028 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				768FF1E11BF0E64B00B4A028 /* APIs */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		768FF1E01BF0E62500B4A028 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				76AD59C81BF0EC6000EFB09A /* IHPDataStore.h */,
+				76AD59C91BF0EC6000EFB09A /* IHPDataStore.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		768FF1E11BF0E64B00B4A028 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				76D40C171BF0E6D600DE97C8 /* IHPParseAPIClient.h */,
+				76D40C181BF0E6D600DE97C8 /* IHPParseAPIClient.m */,
+			);
+			name = APIs;
+			sourceTree = "<group>";
+		};
+		9B161C8969AC00065CB96FC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6882405A85E99B6617A2C0D1 /* Pods-iHelp.debug.xcconfig */,
+				ED412BB30E59E3EDECFDE9B2 /* Pods-iHelp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 768FF1D31BF0E3B600B4A028 /* Build configuration list for PBXNativeTarget "iHelp" */;
 			buildPhases = (
+				AEF002303C3ED2BD2E141026 /* Check Pods Manifest.lock */,
 				768FF1A21BF0E3B600B4A028 /* Sources */,
 				768FF1A31BF0E3B600B4A028 /* Frameworks */,
 				768FF1A41BF0E3B600B4A028 /* Resources */,
+				6575F15BCE2D24E8BD860596 /* Embed Pods Frameworks */,
+				166DE1F2A789B8FDD6117DF9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,12 +345,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		166DE1F2A789B8FDD6117DF9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iHelp/Pods-iHelp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6575F15BCE2D24E8BD860596 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iHelp/Pods-iHelp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEF002303C3ED2BD2E141026 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		768FF1A21BF0E3B600B4A028 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				768FF1B11BF0E3B600B4A028 /* ViewController.m in Sources */,
+				76D40C191BF0E6D600DE97C8 /* IHPParseAPIClient.m in Sources */,
+				76AD59CA1BF0EC6000EFB09A /* IHPDataStore.m in Sources */,
 				768FF1AE1BF0E3B600B4A028 /* AppDelegate.m in Sources */,
 				768FF1AB1BF0E3B600B4A028 /* main.m in Sources */,
 			);
@@ -411,6 +540,7 @@
 		};
 		768FF1D41BF0E3B600B4A028 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6882405A85E99B6617A2C0D1 /* Pods-iHelp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iHelp/Info.plist;
@@ -422,6 +552,7 @@
 		};
 		768FF1D51BF0E3B600B4A028 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED412BB30E59E3EDECFDE9B2 /* Pods-iHelp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iHelp/Info.plist;
@@ -498,6 +629,7 @@
 				768FF1D51BF0E3B600B4A028 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		768FF1D61BF0E3B600B4A028 /* Build configuration list for PBXNativeTarget "iHelpTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +638,7 @@
 				768FF1D81BF0E3B600B4A028 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		768FF1D91BF0E3B600B4A028 /* Build configuration list for PBXNativeTarget "iHelpUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +647,7 @@
 				768FF1DB1BF0E3B600B4A028 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
