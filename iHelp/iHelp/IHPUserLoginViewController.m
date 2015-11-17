@@ -31,6 +31,7 @@
     self.passwordField.text = @"";
 }
 
+
 - (IBAction)loginButtonTapped:(id)sender {
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
@@ -39,8 +40,11 @@
             self.isValidLogin = YES;
             IHPRequestDataStore *dataStore = [IHPRequestDataStore sharedDataStore];
             [dataStore getUserFromLogin:^(BOOL success) {
+                
+                NSLog(@"Success: %d", success);
                 if (success) {
                     NSLog(@"Login successfully!");
+                    
                     [self login];
                 }
             }];

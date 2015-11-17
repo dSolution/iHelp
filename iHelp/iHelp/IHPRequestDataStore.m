@@ -88,34 +88,26 @@
         
         if (!error) {
             self.userData = object;
+            
+            PFFile *profilePicture = [object objectForKey:@"profilePicture"];
+            [profilePicture getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+                if (!error) {
+                    UIImage *image = [UIImage imageWithData:data];
+                    self.profilePic = image;
+                    NSLog(@"User data: %@", image);
+                    completionBlock(YES);
+
+                }else{
+                    NSLog(@"Unable to get profile image from parse");
+                }
+            }];
+            NSLog(@"User data: %@", self.userData);
         }else{
             NSLog(@"User data error: %@", error.description);
         }
         
     }];
-    
-    PFQuery *photeQuery = [PFQuery queryWithClassName:@"Photos"];
-    
-    [photeQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        if (!error) {
-            
-//            UIImage *placeholder = [UIImage imageNamed:@"person-placeholder"];
-//            self.profilePic = placeholder;
-            
-            PFFile *file = [object objectForKey:user[@"profilePic"]];
-            [file getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-                if (!error && data) {
-                    UIImage *image = [UIImage imageWithData:data];
-                    self.profilePic = image;
-                    completionBlock(YES);
-                }else{
-                    NSLog(@"Unable to retrieve profile image!");
-                }
-            }];
-        }else{
-            NSLog(@"Profile image error: %@", error.description);
-        }
-    }];
+
 }
 
 -(void)refreshAllRequests{
